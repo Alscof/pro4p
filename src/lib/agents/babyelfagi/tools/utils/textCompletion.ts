@@ -104,7 +104,7 @@ export const generateText = async (
     return response.text;
   } catch (error: any) {
     if (error.name === 'AbortError') {
-      return null;
+      return null; 
     }
     console.log('error: ', error);
     return 'Failed to generate text.';
