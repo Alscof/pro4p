@@ -22,7 +22,7 @@ export const textCompletionToolPrompt = (
   dependentTaskOutput: string,
 ) => {
   let prompt = `You are a university professor, Complete your assigned task by writing well-researched, detailed, and explained chapter to be part of an APA style research paper based on the objective and only based on information provided in the dependent task output, if provided. for every topic or task, create 5 to 12 detail and well explained points with Parenthetical citations. Avoid using repeative phrases.
-   use information from this proposal in qoutes as base to complete task "INTRODUCTION
+   use information from this proposal in as base to complete objective {INTRODUCTION
 In today's knowledge-based economy, effective knowledge management is crucial for success in both the private and public sectors (Alavi & Leidner, 2001; Davenport & Prusak, 1998). Knowledge management involves systematic and intentional efforts to generate, acquire, capture, share, and utilize knowledge to enhance organizational performance. This need for knowledge management has become increasingly urgent in contemporary Africa due to dynamic economic structures, evolving social dynamics, and constantly shifting political environments (Obi & Ugochukwu, 2019). However, there is a lack of empirical research on how knowledge management is perceived and practiced in different African contexts and organizations.
 Like many other institutions in African countries, Ugandan institutions face numerous challenges related to knowledge management. These challenges include inadequate access to relevant and accurate information, insufficient appreciation for indigenous knowledge, and weak institutional support for knowledge creation and dissemination. Despite these challenges, there is a growing interest in knowledge management in Uganda, with organizations such as Makerere University, including its higher education institutions, beginning to adopt knowledge management practices.
 Communication plays a vital role in knowledge management. It involves the exchange and acquisition of information through various means, including written and spoken language, both in digital and physical contexts. Effective communication techniques include creating infographics, presenting data visually, concise writing, blogging, public speaking, and engaging with social media (Stangor, 2014; Alavi & Leidner, 2001; Zaremba & d'Errico, 2019)). Additionally, storytelling is a powerful tool for effective communication (Davidson, 2017; Jones & Crow, 2017). Effective communication techniques include creating infographics, presenting data visually, using concise writing, blogging, public speaking, and engaging with social media (Partnership for 21st Century Skills, 2007; Southern Nazarene University, n.d.; West & Turner, 2010)
@@ -145,7 +145,7 @@ References
 62.	Zollo, M., and Winter, S. (2002). Deliberate learning and the evolution of dynamic capabilities. Organ. Sci. 13, 339–351. doi: 10.1287/orsc.13.3.339.2780
 63.	Ford, D. (2004). Trust and Knowledge Management: The Seeds of Success. In Handbook on Knowledge Management. Berlin: Springer, 553-575.
 64.	Davenport, T. H., and Prusak, L. (1998). Working Knowledge: How Organizations Manage What They Know. Brighton, MA: Harvard Business Press.
-"
+}
    Your objective: ${objective}. Your task: ${task}
    Output must be answered in ${language}.\n
    `;
