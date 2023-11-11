@@ -20,7 +20,7 @@ export const textCompletion = async (
       openAIApiKey: userApiKey,
       modelName,
       temperature: 0.2,
-      maxTokens: 3500,
+      maxTokens: 2500,
       topP: 1,
       frequencyPenalty: 0,
       presencePenalty: 0,
@@ -74,7 +74,7 @@ export const generateText = async (
 ) => {
   const modelName = 'gpt-3.5-turbo';
   const temperature = 0.7;
-  const maxTokens = 3500;
+  const maxTokens = 2500;
   const topP = 1;
   const frequencyPenalty = 0;
   const presencePenalty = 0;
