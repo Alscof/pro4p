@@ -73,7 +73,7 @@ export class TaskRegistry {
         openAIApiKey: this.userApiKey,
         modelName,
         temperature: 0,
-        maxTokens: 2500,
+        maxTokens: 80000,
         topP: 1,
         verbose: false, // You can set this to true to see the lanchain logs
         streaming: true,
@@ -239,7 +239,7 @@ export class TaskRegistry {
       openAIApiKey: this.userApiKey,
       modelName,
       temperature: 0.7,
-      maxTokens: 2500,
+      maxTokens: 25000,
       topP: 1,
       frequencyPenalty: 0,
       presencePenalty: 0,
