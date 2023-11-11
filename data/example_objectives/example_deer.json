@@ -1,9 +1,9 @@
 {
-  "objective": "Look up AI news from today (May 27, 2023) and write a poem.",
+  "objective": "look up for academic journals and datasets to write the details for the table of contents provided based on the title in the objective",
   "examples": [
     {
       "id": 1,
-      "task": "AI news today",
+      "task": "look for academic journals and datasets",
       "skill": "web_search",
       "icon": "🔎",
       "dependent_task_ids": [],
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "task": "Summarize a news article",
+      "task": "",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1],
@@ -19,15 +19,15 @@
     },
     {
       "id": 3,
-      "task": "Pick up important news",
+      "task": "",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [2],
+      "dependent_task_ids": [1,2],
       "status": "incomplete"
     },
     {
       "id": 4,
-      "task": "Final summary report",
+      "task": "list references used to write table of contents",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1, 2, 3],
