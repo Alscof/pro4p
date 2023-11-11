@@ -85,7 +85,7 @@ export const ALL_AGENTS = [
 export const THEME = [
   { id: 'system', name: 'SYSTEM', icon: '🖥️' },
   { id: 'light', name: 'LIGHT', icon: '🌞' },
-  { id: 'dark', name: 'DARK', icon: '🌚' },
+  { id: 'dark', name: 'DARK', icon: '🌚' }, 
 ];
 
 export const SPECIFIED_SKILLS = ['text_completion']; // for BabyDeerAGI
