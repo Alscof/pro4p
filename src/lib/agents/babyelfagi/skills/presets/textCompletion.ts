@@ -27,7 +27,7 @@ export class TextCompletion extends Skill {
 
     return this.generateText(prompt, task, {
       temperature: 0.2,
-      maxTokens: 800,
+      maxTokens: 4000,
       modelName:
         modelName === 'gpt-4-1106-preview' ? modelName : 'gpt-3.5-turbo-16k',
     });
