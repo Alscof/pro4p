@@ -88,4 +88,4 @@ export const THEME = [
   { id: 'dark', name: 'DARK', icon: '🌚' },
 ];
 
-export const SPECIFIED_SKILLS = ['text_completion', 'web_search']; // for BabyDeerAGI
+export const SPECIFIED_SKILLS = ['text_completion']; // for BabyDeerAGI
