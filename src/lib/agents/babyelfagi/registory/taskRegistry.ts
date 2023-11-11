@@ -8,14 +8,14 @@ export class TaskRegistry {
   tasks: AgentTask[];
   verbose: boolean = false;
   language: string = 'en';
-  useSpecifiedSkills: boolean = true;
+  useSpecifiedSkills: boolean = false;
   userApiKey?: string;
   signal?: AbortSignal;
 
   constructor(
     language = 'en',
     verbose = false,
-    useSpecifiedSkills = true,
+    useSpecifiedSkills = false,
     userApiKey?: string,
     signal?: AbortSignal,
   ) {
