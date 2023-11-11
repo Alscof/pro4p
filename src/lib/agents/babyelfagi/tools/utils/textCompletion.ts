@@ -12,7 +12,7 @@ export const textCompletion = async (
   messageCallnback?: (message: AgentMessage) => void,
 ) => {
   if (modelName !== 'gpt-4-1106-preview' && prompt.length > 3200) {
-    modelName = 'gpt-3.5-turbo-16k';
+    modelName = 'gpt-4-1106-preview';
   }
 
   const llm = new ChatOpenAI(
@@ -20,7 +20,7 @@ export const textCompletion = async (
       openAIApiKey: userApiKey,
       modelName,
       temperature: 0.2,
-      maxTokens: 800,
+      maxTokens: 60000,
       topP: 1,
       frequencyPenalty: 0,
       presencePenalty: 0,
