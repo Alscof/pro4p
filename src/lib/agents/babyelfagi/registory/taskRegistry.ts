@@ -31,7 +31,7 @@ export class TaskRegistry {
     id: string,
     objective: string,
     skillDescriptions: string,
-    modelName: string = 'gpt-3.5-turbo',
+    modelName: string = 'gpt-3.5-turbo-16k',
     handleMessage: (message: AgentMessage) => Promise<void>,
   ): Promise<void> {
     const relevantObjective = await findMostRelevantObjective(
@@ -46,10 +46,13 @@ export class TaskRegistry {
     const exapmleObjective = relevantObjective.objective;
     const exampleTaskList = relevantObjective.examples;
     const prompt = `
-    You are an expert task list creation AI tasked with creating a  list of tasks as a JSON array, considering the ultimate objective of your team: ${objective}.
-    Create a very short task list based on the objective, the final output of the last task will be provided back to the user. Limit tasks types to those that can be completed with the available skills listed below. Task description should be detailed.###
+    You are an expert task list creation AI tasked with creating a list of tasks to write an APA style research paper based on the subtopics of table of contents listed in the objective as a JSON array, considering the ultimate objective of your team: ${objective}.
+    Create a task list to match all table of subtopics listed in the objective, the final output of the last task will be provided back to the user. Limit tasks type to text-completion  only. Task description should be detailed.###
     AVAILABLE SKILLS: ${skillDescriptions}.###
     RULES:
+    Use text completion.
+    task list must be based on the objective.
+    create one task every subtopic listed in the table of contents with skipping or deleting any.
     Do not use skills that are not listed.
     Always include one skill.
     Do not create files unless specified in the objective.
@@ -68,13 +71,12 @@ export class TaskRegistry {
     const model = new ChatOpenAI(
       {
         openAIApiKey: this.userApiKey,
-        modelName,
+        modelName: this.useSpecifiedSkills ? modelName : 'gpt-3.5-turbo-16k',
         temperature: 0,
-        maxTokens: 3000,
+        maxTokens: 4000,
         topP: 1,
         verbose: false, // You can set this to true to see the lanchain logs
         streaming: true,
-        maxRetries: 5,
         callbacks: [
           {
             handleLLMNewToken(token: string) {
@@ -96,13 +98,6 @@ export class TaskRegistry {
     try {
       const response = await model.call([systemMessage, messages]);
       result = response.text;
-      // markdown is now appended (remove when langchain supports json mode)
-      if (result.startsWith('```json')) {
-        result = result.slice(7);
-      }
-      if (result.endsWith('```')) {
-        result = result.slice(0, -3);
-      }
     } catch (error: any) {
       if (error.name === 'AbortError') {
         console.log('Task creation aborted');
@@ -111,7 +106,6 @@ export class TaskRegistry {
     }
 
     if (result === undefined) {
-      console.log('error');
       return;
     }
 
@@ -124,19 +118,13 @@ export class TaskRegistry {
     taskOutputs: TaskOutputs,
     objective: string,
     skillRegistry: SkillRegistry,
-    modelName: string,
   ): Promise<string> {
     const skill = skillRegistry.getSkill(task.skill ?? '');
     const dependentTaskOutputs = task.dependentTaskIds
       ? task.dependentTaskIds.map((id) => taskOutputs[id].output).join('\n')
       : '';
 
-    return await skill.execute(
-      task,
-      dependentTaskOutputs,
-      objective,
-      modelName,
-    );
+    return await skill.execute(task, dependentTaskOutputs, objective);
   }
 
   getTasks(): AgentTask[] {
@@ -171,7 +159,7 @@ export class TaskRegistry {
     objective: string,
     taskOutput: string,
     skillDescriptions: string,
-    modelName: string = 'gpt-4-1106-preview',
+    modelName: string = 'gpt-3.5-turbo-16k',
   ): Promise<[AgentTask[], number[], AgentTask[]]> {
     const example = [
       [
@@ -205,9 +193,9 @@ export class TaskRegistry {
       ],
     ];
 
-    const prompt = `You are an expert task manager, review the task output to decide at least one new task to add.
-  As you add a new task, see if there are any tasks that need to be updated (such as updating dependencies).
-  Use the current task list as reference. 
+    const prompt = `You are an expert task manager tasked to write an APA style research paper based on table of contents topics and suptopics listed in the objective, review the task output to decide at least one new task to add.
+  As you add a new task, see if there are any tasks that need to be updated to the table of contents topics and subtopics  (such as updating dependencies)
+  Use the current task list, table of contents and subtopics as reference. 
   considering the ultimate objective of your team: ${objective}. 
   Do not add duplicate tasks to those in the current task list.
   Only provide JSON as your response without further comments.
@@ -236,7 +224,7 @@ export class TaskRegistry {
       openAIApiKey: this.userApiKey,
       modelName,
       temperature: 0.7,
-      maxTokens: 3000,
+      maxTokens: 4000,
       topP: 1,
       frequencyPenalty: 0,
       presencePenalty: 0,
