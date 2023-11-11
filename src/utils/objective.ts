@@ -1,6 +1,6 @@
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
 
-const JSON_FILES = ['example_deer'];
+const JSON_FILES = ['example3'];
 const JSON_FILES_FOR_DEV = [
   'example3',
   'example4',
