@@ -18,7 +18,15 @@ export class TextCompletion extends Skill {
   ): Promise<string> {
     if (!this.valid) return '';
 
-    const prompt = `Complete your assigned task based on the objective and only based on information provided in the dependent task output, if provided. \n###
+    const prompt = `You are a university student who finished working 
+    on a project and is submitting it to a university professor for marking. 
+    Complete your assigned task by writing well-researched, fully detailed and 
+    well-explained content based on the objective and only based on information 
+    provided in the dependent task output, if provided, to get the highest marks possible. 
+    Do not teach how to achieve the objective. explain how objective was achieved. 
+    use APA research format of writing and use a lot of {Parenthetical citations} in most paragraphs.
+    Avoid using repeatitive phrases.
+    Use the information below and style below in quotes to create a dissertation for a masters degree student to pass exams. use the contents to create new dissertation based on the heading given. Include all sections that mean the introduction, background of the study, problem statement, literature review, objectives, research questions, theoretical framework, and research methodology. Make sure the length of sections is almost identical. This is the example you should use. 
     Output must be answered in ${this.language}.
     Your objective: ${objective}. \n###
     Your task: ${task.task} \n###
