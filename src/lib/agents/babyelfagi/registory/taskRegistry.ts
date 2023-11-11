@@ -8,14 +8,14 @@ export class TaskRegistry {
   tasks: AgentTask[];
   verbose: boolean = false;
   language: string = 'en';
-  useSpecifiedSkills: boolean = false;
+  useSpecifiedSkills: boolean = true;
   userApiKey?: string;
   signal?: AbortSignal;
 
   constructor(
     language = 'en',
     verbose = false,
-    useSpecifiedSkills = false,
+    useSpecifiedSkills = true,
     userApiKey?: string,
     signal?: AbortSignal,
   ) {
@@ -70,11 +70,11 @@ export class TaskRegistry {
         openAIApiKey: this.userApiKey,
         modelName,
         temperature: 0,
-        maxTokens: 1500,
+        maxTokens: 3000,
         topP: 1,
         verbose: false, // You can set this to true to see the lanchain logs
         streaming: true,
-        maxRetries: 2,
+        maxRetries: 5,
         callbacks: [
           {
             handleLLMNewToken(token: string) {
@@ -236,7 +236,7 @@ export class TaskRegistry {
       openAIApiKey: this.userApiKey,
       modelName,
       temperature: 0.7,
-      maxTokens: 1500,
+      maxTokens: 3000,
       topP: 1,
       frequencyPenalty: 0,
       presencePenalty: 0,
