@@ -12,7 +12,7 @@ export class TextCompletion extends Skill {
 
   async execute(
     task: AgentTask,
-    dependentTaskOutputs: string,
+    dependentTaskOutputs: string, 
     objective: string,
     modelName: string,
   ): Promise<string> {
