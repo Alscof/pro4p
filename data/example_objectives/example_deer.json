@@ -1,17 +1,19 @@
 {
-  "objective": "look up for academic journals and datasets to write the details for the table of contents provided based on the title in the objective",
+  "objective": "create tasks out of the table of contents provided exactly as provided without deleting or skipping any to write a fully comprehensively well-detailed dissertation with title provided untapped.vc",
   "examples": [
+    
+    
     {
       "id": 1,
-      "task": "look for academic journals and datasets",
-      "skill": "web_search",
-      "icon": "🔎",
+      "task": "Abstract should be written in one detailed and well-explained paragraph. it should be around 250 words. use a lot of Parenthetical citations in all paragraphs",
+      "skill": "text_completion",
+      "icon": "🤖",
       "dependent_task_ids": [],
       "status": "incomplete"
     },
     {
       "id": 2,
-      "task": "",
+      "task": "1. Introduction",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1],
@@ -19,18 +21,83 @@
     },
     {
       "id": 3,
-      "task": "",
+      "task": "1.1 background of the study",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1,2],
       "status": "incomplete"
     },
-    {
+        {
       "id": 4,
-      "task": "list references used to write table of contents",
+      "task": "1.1.1 The Rise of Knowledge Management",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1, 2, 3],
+      "dependent_task_ids": [1,2,3],
+      "status": "incomplete"
+    },
+    {
+      "id": 5,
+      "task": "",
+      "skill": "text_completion",
+      "icon": "🤖",
+      "dependent_task_ids": [1,2,3,4],
+      "status": "incomplete"
+    },
+    {
+      "id": 6,
+      "task": "",
+      "skill": "text_completion",
+      "icon": "🤖",
+      "dependent_task_ids": [1,2,3,4,5],
+      "status": "incomplete"
+    },
+    {
+      "id": 7,
+      "task": "",
+      "skill": "text_completion",
+      "icon": "🤖",
+      "dependent_task_ids": [1,2,3,4,5,6],
+      "status": "incomplete"
+    },
+        {
+      "id": 8,
+      "task": "",
+      "skill": "text_completion",
+      "icon": "🤖",
+      "dependent_task_ids": [1,2,3,4,5,6,7],
+      "status": "incomplete"
+    },
+            {
+      "id": 9,
+      "task": "",
+      "skill": "text_completion",
+      "icon": "🤖",
+      "dependent_task_ids": [1,2,3,4,5,6,7,8],
+      "status": "incomplete"
+    },
+                {
+      "id": 10,
+      "task": "",
+      "skill": "text_completion",
+      "icon": "🤖",
+      "dependent_task_ids": [1,2,3,4,5,6,7,8,9],
+      "status": "incomplete"
+    },
+                  
+    {
+      "id": 11,
+      "task": "10. list references and citations used. verify to check if references and citations are correct and factual. delete false references and citations.",
+      "skill": "text_completion",
+      "icon": "🤖",
+      "dependent_task_ids": [1,2,3,4,5,6,7,8,9,10],
+      "status": "incomplete"
+    },
+                            {
+      "id": 12,
+      "task": "11. Appendices",
+      "skill": "text_completion",
+      "icon": "🤖",
+      "dependent_task_ids": [1,2,3,4,5,6,7,8,9,10,11],
       "status": "incomplete"
     }
   ]
