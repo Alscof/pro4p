@@ -12,7 +12,7 @@ export const textCompletion = async (
   messageCallnback?: (message: AgentMessage) => void,
 ) => {
   if (modelName !== 'gpt-4-1106-preview' && prompt.length > 3200) {
-    modelName = 'gpt-4-1106-preview';
+    modelName = 'gpt-3.5-turbo-16k';
   }
 
   const llm = new ChatOpenAI(
