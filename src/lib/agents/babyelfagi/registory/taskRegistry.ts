@@ -31,7 +31,7 @@ export class TaskRegistry {
     id: string,
     objective: string,
     skillDescriptions: string,
-    modelName: string = 'gpt-4-1106-preview',
+    modelName: string = 'gpt-3.5-turbo-16k',
     handleMessage: (message: AgentMessage) => Promise<void>,
   ): Promise<void> {
     const relevantObjective = await findMostRelevantObjective(
@@ -73,7 +73,7 @@ export class TaskRegistry {
         openAIApiKey: this.userApiKey,
         modelName,
         temperature: 0,
-        maxTokens: 8000,
+        maxTokens: 10000,
         topP: 1,
         verbose: false, // You can set this to true to see the lanchain logs
         streaming: true,
@@ -174,7 +174,7 @@ export class TaskRegistry {
     objective: string,
     taskOutput: string,
     skillDescriptions: string,
-    modelName: string = 'gpt-4-1106-preview',
+    modelName: string = 'gpt-3.5-turbo-16k',
   ): Promise<[AgentTask[], number[], AgentTask[]]> {
     const example = [
       [
@@ -239,7 +239,7 @@ export class TaskRegistry {
       openAIApiKey: this.userApiKey,
       modelName,
       temperature: 0.7,
-      maxTokens: 8000,
+      maxTokens: 10000,
       topP: 1,
       frequencyPenalty: 0,
       presencePenalty: 0,
