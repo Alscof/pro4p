@@ -20,7 +20,7 @@ export const textCompletion = async (
       openAIApiKey: userApiKey,
       modelName,
       temperature: 0.2,
-      maxTokens: 4000,
+      maxTokens: 8000,
       topP: 1,
       frequencyPenalty: 0,
       presencePenalty: 0,
