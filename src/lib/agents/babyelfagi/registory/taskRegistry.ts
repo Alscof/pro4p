@@ -31,7 +31,7 @@ export class TaskRegistry {
     id: string,
     objective: string,
     skillDescriptions: string,
-    modelName: string = 'gpt-3.5-turbo-16k',
+    modelName: string = 'gpt-3.5-turbo-1106',
     handleMessage: (message: AgentMessage) => Promise<void>,
   ): Promise<void> {
     const relevantObjective = await findMostRelevantObjective(
