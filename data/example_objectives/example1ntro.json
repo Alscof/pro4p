@@ -4,7 +4,7 @@
  
     {
       "id": 1,
-      "task": "1. Introduction. fully desribe and explain content in the dissertation",
+      "task": "1. Introduction. fully describe and explain content in the dissertation",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [],
@@ -15,7 +15,7 @@
       "task": "1.1 background of the study",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1],
+      "dependent_task_ids": [],
       "status": "incomplete"
     },
         {
@@ -23,7 +23,7 @@
       "task": "1.1.1 The Rise of Knowledge Management",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1,2],
+      "dependent_task_ids": [],
       "status": "incomplete"
     },
     {
@@ -31,7 +31,7 @@
       "task": "",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1,2,3],
+      "dependent_task_ids": [],
       "status": "incomplete"
     },
     {
@@ -39,7 +39,7 @@
       "task": "",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1,2,3,4],
+      "dependent_task_ids": [],
       "status": "incomplete"
     },
     {
@@ -47,7 +47,7 @@
       "task": "",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1,2,3,4,5],
+      "dependent_task_ids": [],
       "status": "incomplete"
     },
         {
@@ -55,7 +55,7 @@
       "task": "",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1,2,3,4,5,6],
+      "dependent_task_ids": [],
       "status": "incomplete"
     },
             {
@@ -63,7 +63,7 @@
       "task": "",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1,2,3,4,5,6,7],
+      "dependent_task_ids": [],
       "status": "incomplete"
     },
                 {
@@ -71,7 +71,7 @@
       "task": "",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1,2,3,4,5,6,7,8],
+      "dependent_task_ids": [],
       "status": "incomplete"
     },
                   
