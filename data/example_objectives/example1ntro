@@ -13,7 +13,7 @@
     },
     {
       "id": 2,
-      "task": "1. Introduction. fully describe and explain content in the dissertation",
+      "task": "1. Introduction. fully describe and explain content in the dissertation. it should be around 1000 words",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1],
