@@ -106,9 +106,9 @@ export class Skill {
     const id = uuidv4();
     const defaultParams = {
       apiKey: this.apiKeys.openai,
-      modelName: 'gpt-3.5-turbo',
+      modelName: 'gpt-4-1106-preview',
       temperature: 0.7,
-      maxTokens: 1500,
+      maxTokens: 50000,
       topP: 1,
       frequencyPenalty: 0,
       presencePenalty: 0,
