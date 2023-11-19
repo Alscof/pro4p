@@ -13,7 +13,7 @@
     },
     {
       "id": 2,
-      "task": "1. Introduction",
+      "task": "1. Introduction. fully desribe and explain content in the dissertation",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1],
