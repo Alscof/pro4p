@@ -1,11 +1,10 @@
 {
   "objective": "create tasks out of the table of contents provided exactly as provided without deleting or skipping any to write fully comprehensively well-detailed apa format dissertation chapters with valid and real parenthetical citations from academic journals in all paragraphs based on the title provided untapped.vc",
   "examples": [
-    
-    
+ 
     {
       "id": 1,
-      "task": "Abstract should be written in one detailed and well-explained paragraph. it should be around 250 words. use a lot of Parenthetical citations in all paragraphs",
+      "task": "1. Introduction. fully desribe and explain content in the dissertation",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [],
@@ -13,23 +12,23 @@
     },
     {
       "id": 2,
-      "task": "1. Introduction. fully desribe and explain content in the dissertation",
+      "task": "1.1 background of the study",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1],
       "status": "incomplete"
     },
-    {
+        {
       "id": 3,
-      "task": "1.1 background of the study",
+      "task": "1.1.1 The Rise of Knowledge Management",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1,2],
       "status": "incomplete"
     },
-        {
+    {
       "id": 4,
-      "task": "1.1.1 The Rise of Knowledge Management",
+      "task": "",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1,2,3],
@@ -51,7 +50,7 @@
       "dependent_task_ids": [1,2,3,4,5],
       "status": "incomplete"
     },
-    {
+        {
       "id": 7,
       "task": "",
       "skill": "text_completion",
@@ -59,7 +58,7 @@
       "dependent_task_ids": [1,2,3,4,5,6],
       "status": "incomplete"
     },
-        {
+            {
       "id": 8,
       "task": "",
       "skill": "text_completion",
@@ -67,7 +66,7 @@
       "dependent_task_ids": [1,2,3,4,5,6,7],
       "status": "incomplete"
     },
-            {
+                {
       "id": 9,
       "task": "",
       "skill": "text_completion",
@@ -75,29 +74,21 @@
       "dependent_task_ids": [1,2,3,4,5,6,7,8],
       "status": "incomplete"
     },
-                {
+                  
+    {
       "id": 10,
-      "task": "",
+      "task": "10. list references and citations used. verify to check if references and citations are correct and factual. delete false references and citations.",
       "skill": "text_completion",
       "icon": "🤖",
       "dependent_task_ids": [1,2,3,4,5,6,7,8,9],
       "status": "incomplete"
     },
-                  
-    {
-      "id": 11,
-      "task": "10. list references and citations used. verify to check if references and citations are correct and factual. delete false references and citations.",
-      "skill": "text_completion",
-      "icon": "🤖",
-      "dependent_task_ids": [1,2,3,4,5,6,7,8,9,10],
-      "status": "incomplete"
-    },
                             {
-      "id": 12,
+      "id": 11,
       "task": "11. Appendices",
       "skill": "text_completion",
       "icon": "🤖",
-      "dependent_task_ids": [1,2,3,4,5,6,7,8,9,10,11],
+      "dependent_task_ids": [1,2,3,4,5,6,7,8,9,10],
       "status": "incomplete"
     }
   ]
