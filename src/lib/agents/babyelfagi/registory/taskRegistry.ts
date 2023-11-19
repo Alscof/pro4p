@@ -174,7 +174,7 @@ export class TaskRegistry {
     objective: string,
     taskOutput: string,
     skillDescriptions: string,
-    modelName: string = 'gpt-3.5-turbo-16k',
+    modelName: string = 'gpt-4-0613',
   ): Promise<[AgentTask[], number[], AgentTask[]]> {
     const example = [
       [
